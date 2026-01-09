@@ -1,7 +1,7 @@
 :root {
   --green: rgba(61, 122, 107, 1);
 }
-.container-pokemons {
+main{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -46,7 +46,7 @@ h2 {
   text-align: center;
 }
 
-figure {
+main figure {
   display: flex;
   flex-direction: column;
 }
