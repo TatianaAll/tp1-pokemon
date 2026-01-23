@@ -60,3 +60,8 @@ main figure {
   background-color: #707070;
   border: 10px solid #707070;
 }
+
+.lmj-layout-inner {
+  display: flex;
+  flex-direction: row;
+}

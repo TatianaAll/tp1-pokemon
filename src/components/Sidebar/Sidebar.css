@@ -1,16 +1,11 @@
-.lmj-layout-inner {
-  display: flex;
-  flex-direction: row;
-}
-
 .lmj-cart {
   color: white;
   background-color: #ef4036;
-  padding: 32px;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 300px;
+  width: 15rem;
   z-index: 99;
   animation: fadeIn 1s;
   border-radius: 0 5px 5px 0;
@@ -35,7 +30,7 @@
 }
 
 .lmj-cart-add-button {
-  margin-left: 32px;
+  margin-left: 2rem;
   cursor: pointer;
 }
 
@@ -52,7 +47,7 @@
 }
 
 .lmj-cart-closed {
-  padding: 32px;
+  padding: 2rem;
   background-color: #ef4036;
   position: absolute;
   z-index: 99;

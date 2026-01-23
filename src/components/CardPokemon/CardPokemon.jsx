@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TypeCardPokemon from "../TypeCardPokemon/TypeCardPokemon";
 import "./CardPokemon.css";
+import addPokemon from "./../../assets/add.png";
 
 function CardPokemon(props) {
   function getColorByType(type) {
@@ -54,6 +55,9 @@ function CardPokemon(props) {
       >
         <figure className="cardFront">
           <picture>
+            <div onClick={() => {props.addToPokedex([...props.pokedex, props.pokemon.name]) }} style={{ width: "10%" }}>
+              <img src={addPokemon} alt="" style={{ width: "100%" }} />
+            </div>
             <img
               src={props.pokemon.image}
               alt={`Image ${props.pokemon.name}`}

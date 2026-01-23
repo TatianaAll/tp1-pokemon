@@ -5,12 +5,16 @@ import "./css/normalize.css";
 import logo from "./assets/logo.png";
 import CardPokemon from "./components/CardPokemon/CardPokemon";
 import Sidebar from "./components/Sidebar/Sidebar";
+import { useState } from "react";
 
 
 function App() {
+  const [pokedex, setPokedex] = useState([]);
+
   const listPokemon = datasPoke.map((pokemon) => (
-          <CardPokemon pokemon={pokemon}/>
-        ))
+          <CardPokemon pokemon={ pokemon } pokedex={ pokedex } addToPokedex={ setPokedex } />
+        ));
+  
   return (
     <>
     <h1 style= {{ textAlign: "center", width: "30%" , margin: "auto" }}>
@@ -18,7 +22,7 @@ function App() {
     </h1>
 
       <div className = "lmj-layout-inner">
-        <Sidebar />
+        <Sidebar pokedex = { pokedex } />
       </div>
       <main>
         {listPokemon}

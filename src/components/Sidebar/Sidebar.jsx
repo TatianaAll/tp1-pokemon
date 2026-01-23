@@ -3,9 +3,13 @@ import { useState } from "react";
 import addPokemon from "./../../assets/add.png";
 import pokeball from "./../../assets/pokeball.png";
 
-function Sidebar() {
+function Sidebar({pokedex}) {
   /* Création du useState isOpen qui sera initialisé à false */
   const [isOpen, setIsOpen] = useState(false);
+  // console.log(pokedex)
+  let listPoke = pokedex.map((pokemon) => (
+    <li key={pokemon}>{pokemon}</li>
+  ));
 
   return isOpen ? (
     <div className="lmj-cart">
@@ -19,7 +23,9 @@ function Sidebar() {
         <img src={addPokemon} alt="" />
         <p>Pokédex</p>
       </h2>
-      <div>Votre Pokédex est vide</div>
+      <ul>
+        {listPoke}
+      </ul>
     </div>
   ) : (
     <div className="lmj-cart-closed">
@@ -28,7 +34,7 @@ function Sidebar() {
         onClick={() => setIsOpen(true)}
       >
         <img src={pokeball} alt="" />
-        <p>Pokédex</p>
+        <p>Pokédex ({pokedex.length})</p>
       </button>
     </div>
   );
