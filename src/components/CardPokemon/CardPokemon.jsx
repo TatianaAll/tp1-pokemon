@@ -54,17 +54,20 @@ function CardPokemon(props) {
         }}
       >
         <figure className="cardFront">
-          <picture>
+          <picture style = {{ position: "relative"}}>
             <div
               onClick={(event) => {
+                // to prevent the click on the add button from triggering the card flip
                 event.stopPropagation();
+                // add pokemon to pokedex UNIQUE VALUES ONLY
                 props.addToPokedex([
+                  // 
                   ...new Set([...props.pokedex, props.pokemon.name]),
                 ]);
               }}
-              style={{ width: "10%" }}
+              style={{ width: "10%",  position: "absolute", top: "0.3rem", right: "0.3rem"  }}
             >
-              <img src={addPokemon} alt="" style={{ width: "100%" }} />
+              <img src={addPokemon} alt="" style={{ width: "100%"}} />
             </div>
             <img
               src={props.pokemon.image}

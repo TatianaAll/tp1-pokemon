@@ -3,14 +3,19 @@ import { useState } from "react";
 import addPokemon from "./../../assets/add.png";
 import pokeball from "./../../assets/pokeball.png";
 
-function Sidebar({pokedex, setPokedex}) {
+function Sidebar({ pokedex, setPokedex }) {
   /* Création du useState isOpen qui sera initialisé à false */
   const [isOpen, setIsOpen] = useState(false);
 
+  // Creation of the list of <li> for each pokemon in the pokedex
   let listPoke = pokedex.map((pokemon, index) => (
-    <li key={index} data-key = {index} onClick={() => { 
-      setPokedex (pokedex.filter((patate) => patate !== pokemon));
-    }}>
+    <li
+      key={index}
+      // Adding an onClick event to remove pokemon from the pokedex
+      onClick={() => {
+        setPokedex(pokedex.filter((pokemonToRemove) => pokemonToRemove !== pokemon));
+      }}
+    >
       {pokemon}
     </li>
   ));
@@ -27,9 +32,7 @@ function Sidebar({pokedex, setPokedex}) {
         <img src={addPokemon} alt="" />
         <p>Pokédex</p>
       </h2>
-      <ul>
-        {listPoke}
-      </ul>
+      <ul>{listPoke}</ul>
     </div>
   ) : (
     <div className="lmj-cart-closed">
