@@ -1,3 +1,4 @@
+import { useState } from "react";
 import TypeCardPokemon from "../TypeCardPokemon/TypeCardPokemon";
 import "./CardPokemon.css";
 
@@ -31,7 +32,10 @@ function CardPokemon(props) {
     }
   }
   /* Variable for visibility of the card : back with true front with false */
-  let isNotVisible = false;
+    const [isNotVisible, setIsNotVisible] = useState('false');
+    const handleClick = () => {
+      setIsNotVisible(!isNotVisible);
+    }
 
   return (
     // <article id={pokemon.pokedexId} key={pokemon.pokedexId} className={pokemon.apiTypes[0].name}>
@@ -39,13 +43,7 @@ function CardPokemon(props) {
       id={props.pokemon.pokedexId}
       key={props.pokemon.pokedexId}
       data-reverse={isNotVisible}
-      onClick={(e) => {
-        if (e.currentTarget.getAttribute("data-reverse") === "true") {
-          e.currentTarget.setAttribute("data-reverse", "false");
-        } else {
-          e.currentTarget.setAttribute("data-reverse", "true");
-        }
-      }}
+      onClick = {handleClick}
     >
       <div
         className="cardInner"
