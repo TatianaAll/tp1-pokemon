@@ -3,12 +3,16 @@ import { useState } from "react";
 import addPokemon from "./../../assets/add.png";
 import pokeball from "./../../assets/pokeball.png";
 
-function Sidebar({pokedex}) {
+function Sidebar({pokedex, setPokedex}) {
   /* Création du useState isOpen qui sera initialisé à false */
   const [isOpen, setIsOpen] = useState(false);
-  // console.log(pokedex)
-  let listPoke = pokedex.map((pokemon) => (
-    <li key={pokemon}>{pokemon}</li>
+
+  let listPoke = pokedex.map((pokemon, index) => (
+    <li key={index} data-key = {index} onClick={() => { 
+      setPokedex (pokedex.filter((patate) => patate !== pokemon));
+    }}>
+      {pokemon}
+    </li>
   ));
 
   return isOpen ? (

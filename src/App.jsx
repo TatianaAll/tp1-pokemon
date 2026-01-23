@@ -22,7 +22,7 @@ function App() {
     </h1>
 
       <div className = "lmj-layout-inner">
-        <Sidebar pokedex = { pokedex } />
+        <Sidebar pokedex = { pokedex } setPokedex = { setPokedex } />
       </div>
       <main>
         {listPokemon}

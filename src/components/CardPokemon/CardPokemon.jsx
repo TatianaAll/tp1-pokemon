@@ -22,21 +22,21 @@ function CardPokemon(props) {
         return "#51c4e7";
       case "Combat":
         return "#d56723";
-      case "Poison" :
+      case "Poison":
         return "#b97fc9";
-      case "Sol": 
+      case "Sol":
         return "#a57c3b";
-      case "Vol": 
+      case "Vol":
         return "#3dc7ef";
       default:
         return "lightgray";
     }
   }
   /* Variable for visibility of the card : back with true front with false */
-    const [isNotVisible, setIsNotVisible] = useState('false');
-    const handleClick = () => {
-      setIsNotVisible(!isNotVisible);
-    }
+  const [isNotVisible, setIsNotVisible] = useState("false");
+  const handleClick = () => {
+    setIsNotVisible(!isNotVisible);
+  };
 
   return (
     // <article id={pokemon.pokedexId} key={pokemon.pokedexId} className={pokemon.apiTypes[0].name}>
@@ -44,7 +44,7 @@ function CardPokemon(props) {
       id={props.pokemon.pokedexId}
       key={props.pokemon.pokedexId}
       data-reverse={isNotVisible}
-      onClick = {handleClick}
+      onClick={handleClick}
     >
       <div
         className="cardInner"
@@ -55,7 +55,15 @@ function CardPokemon(props) {
       >
         <figure className="cardFront">
           <picture>
-            <div onClick={() => {props.addToPokedex([...props.pokedex, props.pokemon.name]) }} style={{ width: "10%" }}>
+            <div
+              onClick={(event) => {
+                event.stopPropagation();
+                props.addToPokedex([
+                  ...new Set([...props.pokedex, props.pokemon.name]),
+                ]);
+              }}
+              style={{ width: "10%" }}
+            >
               <img src={addPokemon} alt="" style={{ width: "100%" }} />
             </div>
             <img
