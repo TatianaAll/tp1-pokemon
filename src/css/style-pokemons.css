@@ -9,17 +9,6 @@ main{
   padding: 5%;
 }
 
-article {
-  width: 350px;
-  border-radius: 20px;
-  border: 10px solid grey; /* #3d7a6bb3 */
-  background-color: grey;
-  overflow: hidden;
-  margin: 10px;
-  -webkit-box-shadow: -1px 2px 13px 0px rgba(0, 0, 0, 0.74);
-  box-shadow: -1px 2px 13px 0px rgba(0, 0, 0, 0.74);
-}
-
 picture {
   display: block;
   background-color: rgba(0, 0, 0, 0.25);
@@ -61,49 +50,10 @@ main figure {
   border-radius: 5px;
 }
 
-.Feu {
-  background-color: #fd7d24;
-  border: 10px solid #fd7d24;
-}
-.Eau {
-  background-color: #4592c4;
-  border: 10px solid #4592c4;
-}
-.Plante {
-  background-color: #9bcc50;
-  border: 10px solid #9bcc50;
-}
-.Électrik {
-  background-color: #eed535;
-  border: 10px solid #eed535;
-}
-.Glace {
-  background-color: #51c4e7;
-  border: 10px solid #51c4e7;
-}
-.Combat {
-  background-color: #d56723;
-  border: 10px solid #d56723;
-}
-.Poison {
-  background-color: #b97fc9;
-  border: 10px solid #b97fc9;
-}
-.Sol {
-  background-color: #a57c3b;
-  border: 10px solid #a57c3b;
-}
-.Vol {
-  background-color: #3dc7ef;
-  border: 10px solid #3dc7ef;
-}
+
 .Psy {
   background-color: #f366b9;
   border: 10px solid #f366b9;
-}
-.Insecte {
-  background-color: #729f3f;
-  border: 10px solid #729f3f;
 }
 .Roche {
   background-color: #a38c21;
