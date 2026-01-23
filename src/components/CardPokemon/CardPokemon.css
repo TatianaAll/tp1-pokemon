@@ -43,7 +43,7 @@ article[data-reverse='true'] .cardInner {
 .cardBack {
   color: #eeeeee;
   transform: rotateY(180deg);
-  background-image: url('./../../assets/back-cartes.webp');
+  background-image: url('./../../assets/pokemonBack.png');
   background-size: cover;
   display: flex;
   justify-content: center;
