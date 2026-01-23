@@ -40,17 +40,6 @@ main figure {
   flex-direction: column;
 }
 
-.types {
-  background-color: #000;
-  color: #fff;
-  padding: 5px 10px;
-  position: absolute;
-  top: -10px;
-  left: 10px;
-  border-radius: 5px;
-}
-
-
 .Psy {
   background-color: #f366b9;
   border: 10px solid #f366b9;

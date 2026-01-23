@@ -76,6 +76,14 @@ figcaption {
   border-radius: 0 0 10px 10px;
 }
 
+.typesContainer {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  display: flex;
+  gap: 5px;
+}
+
 ol {
   list-style: none;
   margin: 0;
@@ -108,16 +116,6 @@ select {
   padding-left: 15px;
   color: #555555;
   cursor: pointer;
-}
-
-.types {
-  background-color: #000;
-  color: #fff;
-  padding: 5px 10px;
-  position: absolute;
-  top: -10px;
-  left: 10px;
-  border-radius: 5px;
 }
 
 /* Filtres types */

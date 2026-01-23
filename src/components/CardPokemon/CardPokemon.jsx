@@ -60,9 +60,11 @@ function CardPokemon(props) {
             />
           </picture>
           <figcaption>
-            {props.pokemon.apiTypes.map((type) => {
-              <TypeCardPokemon type={type} />;
-            })}
+            <div className="typesContainer">
+              {props.pokemon.apiTypes.map((type) => {
+                return <TypeCardPokemon type={type} />;
+              })}
+            </div>
 
             <h2>{props.pokemon.name}</h2>
             <ol>

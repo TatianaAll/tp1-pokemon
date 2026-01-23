@@ -1,6 +1,8 @@
-function TypeCardPokemon({type}) {
+import "./TypeCardPokemon.css";
+
+function TypeCardPokemon(props) {
   return (
-      <span className="types">{type}</span>
+      <span className="types" key={props.type.name}>{props.type.name}</span>
   )
 }
 
