@@ -5,6 +5,7 @@ import CardPokemon from "./components/CardPokemon/CardPokemon";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { useEffect, useState } from "react";
 import Spinner from "./components/WaintingSpinner/Spinner";
+import FilterType from "./components/FilterType/FilterType";
 
 function App() {
   // Adding a useState for Pokemons that are charged with the API
@@ -20,6 +21,13 @@ function App() {
       addToPokedex={setPokedex}
     />
   ));
+  const allTypes = [
+    ...new Set(
+      // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap 
+      // flat map similar to a map(), then a flat (array in array)
+      datasPoke.flatMap((pokemon) => pokemon.apiTypes.map((type) => type.name)),
+    ),
+  ];
 
   useEffect(() => {
     fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/1")
@@ -40,6 +48,9 @@ function App() {
       </h1>
       {loading ? (
         <>
+          <div>
+            <FilterType types={allTypes} />
+          </div>
           <div className="lmj-layout-inner">
             <Sidebar pokedex={pokedex} setPokedex={setPokedex} />
           </div>
