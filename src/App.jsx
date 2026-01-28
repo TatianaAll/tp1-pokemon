@@ -4,6 +4,7 @@ import logo from "./assets/logo.png";
 import CardPokemon from "./components/CardPokemon/CardPokemon";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { useEffect, useState } from "react";
+import Spinner from "./components/WaintingSpinner/Spinner";
 
 function App() {
   // Adding a useState for Pokemons that are charged with the API
@@ -45,7 +46,7 @@ function App() {
           <main>{listPokemon}</main>
         </>
       ) : (
-        <p>Test KO</p>
+        <Spinner />
       )}
     </>
   );
